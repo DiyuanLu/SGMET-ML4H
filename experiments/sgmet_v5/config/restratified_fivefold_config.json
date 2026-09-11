@@ -1,0 +1,25 @@
+{
+  "outer_split": "cv_splits/v4_cv_folds.npz",
+  "outer_test_folds_changed": false,
+  "inner_method": "equal five-bucket iterative multilabel stratification; bucket 0 is validation",
+  "seed_per_fold": {
+    "0": 2126,
+    "1": 2127,
+    "2": 2128,
+    "3": 2129,
+    "4": 2130
+  },
+  "proportions": {
+    "train": 0.64,
+    "validation": 0.16,
+    "test": 0.2
+  },
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "prevalence_table": "restratified_fivefold_prevalence.csv"
+}

@@ -1,0 +1,13 @@
+{
+  "base_feature_set": "active_set.json",
+  "exclude_additional": [
+    "BMDBMIC",
+    "BPXCHR",
+    "DMDEDUC3",
+    "RIDEXAGM",
+    "RIDEXAGY"
+  ],
+  "n_active": 149,
+  "purpose": "Primary cycle-shortcut-controlled feature set. The five additional exclusions have no observed values in any split and vary only through missingness/context codes.",
+  "derivation": "172 total minus 11 team-ignored SMQ features minus 7 absolute-constant features minus 5 value-empty cycle proxies"
+}
