@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Data and run artifacts (never committed)
+data/
+outputs/
+runs/
+checkpoints/
+*.pt
+*.ckpt
+*.parquet
+*.tar.gz
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

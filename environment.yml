@@ -1,0 +1,33 @@
+name: sgmet
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.11
+  - beautifulsoup4
+  - html5lib
+  - lxml
+  - numpy>=1.26.4,<2
+  - pandas
+  - pip
+  - pyarrow
+  - pytorch>=2.6,<3
+  - requests
+  - pip:
+      - matplotlib==3.10.9
+      - numba==0.65.1
+      - hdbscan==0.8.42
+      - llvmlite==0.47.0
+      - optuna>=4.0,<5
+      - joblib==1.5.3
+      - pynndescent==0.6.0
+      - safetensors>=0.4
+      - scikit-learn==1.8.0
+      - scipy==1.17.1
+      - sentence-transformers>=2.7,<4
+      - tensorboard==2.18.0
+      - tqdm==4.67.3
+      - transformers>=4.40,<5
+      - umap-learn==0.5.12
+      - xgboost==3.2.0
+      - pytest>=8.0,<10

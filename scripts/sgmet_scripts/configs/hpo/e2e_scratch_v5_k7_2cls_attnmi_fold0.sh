@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+RUNNER="supervised_hpo_one_fold"
+
+EXPERIMENT_NAME="sgmet_v5_k7_e2e_scratch_2cls_attnmi_hpo_fold0"
+
+# Data
+BASE_TOKEN_DIR="data/processed/tokenized_nhanes_v5"
+FOLD=0
+CLUSTER_CSV_NAME="feature_clusters_biolord_v5_k7_leiden.csv"
+
+NUM_CLUSTERS=7
+ACTIVE_CLUSTERS="0,1,2,3,4,5,6"
+IGNORE_CLUSTERS="none"
+
+# E2E training from scratch
+EXPERT_INIT="random"
+TRAIN_EXPERTS=1
+
+# Architecture
+NUM_SUMMARY_TOKENS=2
+D_MODEL=64
+EXPERT_N_LAYERS=2
+EXPERT_N_HEADS=4
+FUSION_N_LAYERS=2
+FUSION_N_HEADS=4
+DROPOUT=0.1
+
+USE_CLUSTER_EMBEDDING=0
+
+# Training
+EPOCHS="${EPOCHS:-80}"
+BATCH_SIZE="${BATCH_SIZE:-128}"
+
+FEATURE_DROPOUT_PROB_MAX=0.10
+
+# This value itself is irrelevant during HPO because every trial overwrites it.
+CLUSTER_DROPOUT_PROB_MAX=0.90
+
+# 2-CLS Attention-MI
+SUMMARY_AUX_LOSS="attention_mi"
+SUMMARY_AUX_WEIGHT=0.005
+SUMMARY_AUX_WARMUP_EPOCHS=5
+
+SUMMARY_MI_BETA=1.0
+SUMMARY_MI_TEMPERATURE=1.0
+
+# Unused for MI, but passed by the shared runner.
+SUMMARY_ATTENTION_MARGIN=0.90
+SUMMARY_OUTPUT_MARGIN=0.90
+
+# Avoid expensive diagnostics during every HPO trial.
+SUMMARY_DIAGNOSTICS=0
+
+# HPO search space
+LR_LOW="1e-4"
+LR_HIGH="2e-3"
+
+WD_LOW="1e-6"
+WD_HIGH="5e-3"
+
+CLUSTER_DROPOUT_MAX_LOW="0.0"
+CLUSTER_DROPOUT_MAX_HIGH="0.9"
+
+OPTUNA_TRIALS="${OPTUNA_TRIALS:-30}"
+OPTUNA_STARTUP_TRIALS=8
+
+OPTUNA_PRUNER_STARTUP_TRIALS=5
+OPTUNA_PRUNER_WARMUP_EPOCHS=15
+
+SEED=42
+DEVICE="${DEVICE:-mps}"

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+RUNNER="supervised_hpo_one_fold"
+EXPERIMENT_NAME="hpo_sgmet_frozen_semantic_1cls_fold0_cd90"
+DATE_TAG="${DATE_TAG:-$(date +%Y%m%d)}"
+FOLD="${FOLD:-0}"
+PRETRAIN_ROOT="${PRETRAIN_ROOT:-outputs/20260712_5cv_pretrained_branches_cosine50}"
+CLUSTER_CSV_NAME="feature_clusters_biolord_v4_k8_leiden.csv"
+NUM_SUMMARY_TOKENS=1
+
+EPOCHS="${EPOCHS:-80}"
+LR_LOW="${LR_LOW:-2e-4}"
+LR_HIGH="${LR_HIGH:-2e-3}"
+WD_LOW="${WD_LOW:-1e-6}"
+WD_HIGH="${WD_HIGH:-3e-3}"
+OPTUNA_TRIALS="${OPTUNA_TRIALS:-14}"
+OPTUNA_STARTUP_TRIALS="${OPTUNA_STARTUP_TRIALS:-8}"
+OPTUNA_PRUNER_STARTUP_TRIALS="${OPTUNA_PRUNER_STARTUP_TRIALS:-8}"
+OPTUNA_PRUNER_WARMUP_EPOCHS="${OPTUNA_PRUNER_WARMUP_EPOCHS:-15}"

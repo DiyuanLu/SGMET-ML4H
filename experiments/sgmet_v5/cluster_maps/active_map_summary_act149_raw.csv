@@ -1,0 +1,4 @@
+target,achieved_k,resolution,knn,seed,raw_k,raw_singletons,n_merges,min_size,median_size,max_size,min_viability,median_viability,n_below_50pct,junk_cluster_id,num_clusters_arg,file
+7,7,2.3918,17,2026,7,0,0,4,22,35,0.4391,0.7849,1,7,8,feature_clusters_act149_t7_k7raw.csv
+10,10,3.3285,17,2026,10,0,0,2,17,31,0.0351,0.8261,2,10,11,feature_clusters_act149_t10_k10raw.csv
+15,15,4.1625,17,2026,15,4,0,1,10,21,0.0,0.5876,7,15,16,feature_clusters_act149_t15_k15raw.csv
